@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[100];
+    int i,n;
+    int sum=0;
+    scanf("%d",&n);
+   for(i=1;i<=n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    int fact=1;
+    for(i=1;i<=n;i++)
+    {
+        fact=fact*arr[i];
+
+       sum=sum+fact;
+    }
+    printf("fact =%d\n",fact);
+    printf("sum =%d\n",sum);
+
+
+    return 0;
+}

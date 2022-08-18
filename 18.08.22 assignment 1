@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+ int n,a[100],flag=0;
+ printf("Enter the size of an array:");
+ scanf("%d",&n);
+ int i=a[i];
+ for(i=0;i<n;i++)
+ {
+     scanf("%d",&a[i]);
+     if(i==a[i])
+     {
+         flag=1;
+     }
+ }
+ if(flag==0)
+ printf("UNIQUE\n");
+ else
+ printf("DUPLICATE");
+ 
+
+    return 0;
+}

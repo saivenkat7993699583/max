@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    int i,j,a[100][100],r,c,csum=0;
+    printf("Enter how many Rows\n");
+    scanf("%d",&r);
+    printf("Enter how many coloumns\n");
+    scanf("%d",&c);
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+        printf("Enter a[%d][%d] values is :",i,j);
+        scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+        printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    for(i=0;i<r;i++)
+    {
+        csum=0;
+        for(j=0;j<c;j++)
+        {
+        csum=csum+a[j][i];
+        }
+    printf("%d sum coloumn=%d\n",i+1,csum);
+    }
+
+    return 0;
+}

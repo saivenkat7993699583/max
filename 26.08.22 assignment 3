@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+
+{
+    char str[25],str1[25] = {'\0'};
+    int i,length=0,flag=0;
+    printf("Enter a string \n");
+    gets(str);
+    for (i=0;str[i]!='\0'; i++)
+    {
+        length++;
+    }
+    for (i =length-1;i>=0;i--)
+    {
+        str1[length-i-1]=str[i];
+    }
+    for (i = 0;i<length ;i++)
+    {
+        flag=1;
+        if (str1[i] != str[i])
+            flag = 0;
+    }
+    if (flag == 1)
+       printf ("palindrom\n");
+    else
+       printf("not palindrome \n");
+
+
+    return 0;
+}

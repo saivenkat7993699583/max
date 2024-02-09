@@ -1,18 +1,18 @@
 #include <stdio.h>
+#include <ctype.h> // Include ctype.h for tolower() and toupper() functions
 
-int main()
-{
+int main() {
     char str[100];
     int i;
     printf("Enter the string:");
-    gets(str);
-    for(i=0;str[i]!='\0';i++)
-    {
-        if(i%2==0)
-        str[i]=tolower(str[i]);
+    fgets(str, sizeof(str), stdin); // Use fgets for safer input reading
+
+    for (i = 0; str[i] != '\0'; i++) {
+        if (i % 2 == 0)
+            str[i] = tolower(str[i]); // Convert to lowercase if index is even
         else
-        str[i]=toupper(str[i]);
+            str[i] = toupper(str[i]); // Convert to uppercase if index is odd
     }
-    printf("\n%s",str );
+    printf("\n%s", str);
     return 0;
 }

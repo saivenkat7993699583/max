@@ -1,32 +1,30 @@
 #include <stdio.h>
+#include <string.h> // Include string.h for strlen() function
 
-int main()
-{
+int main() {
     char str[100];
     int i;
-    int upper=0,lower=0,num=0;
-    printf(" enter the string : ");
-    gets(str);
-    for(i=0; str[i] != '\0'; i++)
-    {
+    int upper = 0, lower = 0, num = 0;
+    printf("Enter the string: ");
+    fgets(str, sizeof(str), stdin); // Use fgets for safer input reading
 
-            if(str[i]>='A' && str[i]<='Z') 
-            {
-                upper++;
-            }
-            else if(str[i]>='a' && str[i]<='z') 
-            {
-                lower++;
-            }
-            else if(str[i]>='1' && str[i]<='9') 
-            { 
-                num++;
-            }
+    // Remove the newline character from the end of the string if it exists
+    if (str[strlen(str) - 1] == '\n')
+        str[strlen(str) - 1] = '\0';
+
+    for (i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            upper++;
+        } else if (str[i] >= 'a' && str[i] <= 'z') {
+            lower++;
+        } else if (str[i] >= '0' && str[i] <= '9') {
+            num++;
+        }
     }
-    printf("\nCount of uppercase characters: %d",upper);
-    printf("\nCount of Lowercase characters: %d",lower);
-    printf("\nCount of Numbers: %d",num);
 
+    printf("\nCount of uppercase characters: %d", upper);
+    printf("\nCount of lowercase characters: %d", lower);
+    printf("\nCount of Numbers: %d", num);
 
     return 0;
 }

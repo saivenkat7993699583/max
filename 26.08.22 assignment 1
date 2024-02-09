@@ -1,21 +1,24 @@
 #include <stdio.h>
+#include <ctype.h> // Include ctype.h for isalpha() function
 
-int main()
-{
+int main() {
     char str[100];
-    scanf("%[^\n]s",str);
-    int count=0;
-    int i;
-    for(i=0;i<str(str)-1;i++)
-    {
-        
-        if(str[i]==' ' && is alpha(str[i+1]) && (i>0))
-        {
+    scanf("%[^\n]s", str);
+    
+    int count = 0;
+    
+    // Count the number of words
+    for (int i = 0; str[i] != '\0'; i++) {
+        // Check for space followed by an alphabet character
+        if (str[i] == ' ' && isalpha(str[i + 1]) && (i > 0)) {
             count++;
         }
     }
+    
+    // Increment count for the last word
     count++;
-    printf("Total number of words:%d",count);
+
+    printf("Total number of words: %d", count);
 
     return 0;
 }

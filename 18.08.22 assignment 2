@@ -15,7 +15,7 @@ int main()
     {
         fact=fact*arr[i];
 
-       sum=sum+fact;
+       sum=sum+arr[i];
     }
     printf("fact =%d\n",fact);
     printf("sum =%d\n",sum);
@@ -23,3 +23,4 @@ int main()
 
     return 0;
 }
+
